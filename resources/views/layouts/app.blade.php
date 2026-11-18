@@ -193,6 +193,7 @@
         <div>
             <a href="/tasks">All Tasks</a>
             <a href="/tasks/create">+ New Task</a>
+            <a href="/posts">Posts</a>
             <a href="/api/tasks">JSON API</a>
             <a href="/docs/api">API Docs</a>
         </div>

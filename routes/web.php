@@ -15,3 +15,12 @@ Route::delete('/tasks/{task}', [TaskPageController::class, 'destroy']);
 Route::post('/tasks/{task}/assign', [TaskPageController::class, 'assign']);
 Route::delete('/tasks/{task}/students/{student}', [TaskPageController::class, 'unassign']);
 Route::patch('/tasks/{task}/status', [TaskPageController::class, 'updateStatus']);
+
+Route::get('/posts/{any?}', function () {
+    $distHtml = base_path('dist/index.html');
+    if (file_exists($distHtml)) {
+        return response()->file($distHtml);
+    }
+    return redirect('http://localhost:5173/posts');
+})->where('any', '.*');
+
